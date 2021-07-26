@@ -135,6 +135,6 @@ export const currentUser = async (req, res) => {
   }
 };
 
-export const currentUser = async (req, res) => {
+export const mike = async (req, res) => {
   res.status(200).send({message: success})
 }
