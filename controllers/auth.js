@@ -134,3 +134,7 @@ export const currentUser = async (req, res) => {
     console.log(err);
   }
 };
+
+export const currentUser = async (req, res) => {
+  res.status(200).send({message: success})
+}
