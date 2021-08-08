@@ -138,5 +138,13 @@ export const currentUser = async (req, res) => {
 
 
 export const test = async (req, res) => {
-  return res.json({ message: "Success" });
+  
+   db.query(
+      "SELECT email FROM users WHERE email = ?",
+      [email],
+      async (error, results) => {
+         return res.json(results);
+      })
+     
+//   return res.json({ message: "Success" });
 };
