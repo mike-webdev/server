@@ -139,12 +139,14 @@ export const currentUser = async (req, res) => {
 
 export const test = async (req, res) => {
   
-   db.query(
-      "SELECT email FROM users WHERE email = ?",
-      [email],
-      async (error, results) => {
-         return res.json(results);
-      })
+  db.connect((error) => {
+  if (error) {
+    console.log(error);
+  } else {
+     return res.json({ message: "MYSQL Connected..." });
+//     console.log("MYSQL Connected...");
+  }
+});
      
 //   return res.json({ message: "Success" });
 };
