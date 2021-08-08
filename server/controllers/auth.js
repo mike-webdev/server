@@ -2,12 +2,13 @@ const mysql = require("mysql");
 const bcrypt = require("bcrypt");
 import jwt from "jsonwebtoken";
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB,
 });
+
 
 export const register = async (req, res) => {
   try {
@@ -133,4 +134,9 @@ export const currentUser = async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+};
+
+
+export const test = async (req, res) => {
+  return res.json({ message: "Success" });
 };
