@@ -7,7 +7,7 @@ import { requireSignin } from "../middlewares";
 
 
 //controllers
-import {register, login, logout, currentUser} from '../controllers/auth';
+import {register, login, logout, currentUser, test} from '../controllers/auth';
 
 
 //route
@@ -18,5 +18,7 @@ router.post("/login", login);
 router.get("/logout", logout);
 
 router.get("/current-user", requireSignin, currentUser);
+
+router.get("/test", test);
 
 module.exports = router;
